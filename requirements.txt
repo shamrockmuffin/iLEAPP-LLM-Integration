@@ -1,0 +1,28 @@
+astc_decomp_faster
+bencoding
+biplist
+blackboxprotobuf
+bs4
+mmh3
+mdplistlib
+nska-deserialize>=1.3.1
+nska_deserialize
+numpy
+packaging==24.1
+pandas
+pathlib2==2.3.5
+PGPy
+pillow
+pillow_heif
+pycryptodome
+pyinstaller
+
+# pyliblzfse for Windows
+whl_files/pyliblzfse-0.4.1-cp310-cp310-win_amd64.whl; python_version == "3.10" and platform_system == "Windows"
+whl_files/pyliblzfse-0.4.1-cp311-cp311-win_amd64.whl; python_version == "3.11" and platform_system == "Windows"
+whl_files/pyliblzfse-0.4.1-cp312-cp312-win_amd64.whl; python_version == "3.12" and platform_system == "Windows"
+
+pyliblzfse
+
+pytz
+simplekml

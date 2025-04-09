@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLEAPP AI - Integration Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .docs-container {
+            padding: 2rem 0;
+        }
+        .docs-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        .docs-content h2 {
+            margin-top: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-color);
+        }
+        .docs-content h2:first-child {
+            margin-top: 0;
+        }
+        .docs-content h3 {
+            margin-top: 1.5rem;
+            color: var(--primary-color);
+        }
+        .docs-content p {
+            margin-bottom: 1rem;
+        }
+        .docs-content ul, .docs-content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        .docs-content ul li, .docs-content ol li {
+            margin-bottom: 0.5rem;
+        }
+        .docs-content pre {
+            background-color: var(--light-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .docs-content code {
+            font-family: monospace;
+            background-color: var(--light-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        .docs-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        .docs-content img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+        }
+        .docs-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-left: 0;
+            color: var(--secondary-color);
+        }
+        .docs-content .note {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .docs-content .warning {
+            background-color: #fff9db;
+            border-left: 4px solid #ffd43b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .docs-nav {
+            position: sticky;
+            top: 100px;
+        }
+        .docs-nav ul {
+            padding-left: 0;
+        }
+        .docs-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+        .docs-nav ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        .docs-nav ul li a:hover, .docs-nav ul li a.active {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        .docs-nav ul li ul {
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        .docs-layout {
+            display: flex;
+            gap: 2rem;
+        }
+        .docs-sidebar {
+            flex: 1;
+            max-width: 250px;
+        }
+        .docs-main {
+            flex: 3;
+        }
+        @media (max-width: 992px) {
+            .docs-layout {
+                flex-direction: column;
+            }
+            .docs-sidebar {
+                max-width: 100%;
+            }
+            .docs-nav {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>iLEAPP<span>AI</span></h1>
+                <p>Enhanced iOS Forensics with Artificial Intelligence</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="../index.html#how-it-works">How It Works</a></li>
+                    <li><a href="../index.html#demo">Demo</a></li>
+                    <li><a href="../index.html#documentation">Documentation</a></li>
+                    <li><a href="../index.html#resources">Resources</a></li>
+                    <li><a href="../downloads/" class="btn">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Integration Guide</h1>
+            <p>Learn how to integrate iLEAPP AI with your existing forensic workflow</p>
+        </div>
+    </section>
+
+    <section class="docs-container">
+        <div class="container">
+            <div class="docs-layout">
+                <div class="docs-sidebar">
+                    <div class="docs-nav">
+                        <h3>On This Page</h3>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#integration-options">Integration Options</a></li>
+                            <li><a href="#ileapp-integration">iLEAPP Integration</a>
+                                <ul>
+                                    <li><a href="#gui-integration">GUI Integration</a></li>
+                                    <li><a href="#cli-integration">CLI Integration</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#custom-analyzers">Creating Custom Analyzers</a></li>
+                            <li><a href="#report-templates">Custom Report Templates</a></li>
+                            <li><a href="#api-integration">API Integration</a></li>
+                            <li><a href="#security-considerations">Security Considerations</a></li>
+                            <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        </ul>
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api-reference.html">API Reference</a></li>
+                            <li><a href="integration-guide.html" class="active">Integration Guide</a></li>
+                            <li><a href="enhanced-features.html">Enhanced Features</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="docs-main">
+                    <div class="docs-content">
+                        <h2 id="introduction">Introduction</h2>
+                        <p>This guide provides detailed instructions for integrating iLEAPP AI with your existing digital forensics workflow. Whether you're looking to enhance the standard iLEAPP tool, integrate with other forensic platforms, or build custom solutions using our API, this guide will help you get started.</p>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> This integration guide assumes you have already installed iLEAPP AI and have a basic understanding of digital forensics concepts. If you haven't installed iLEAPP AI yet, please refer to the <a href="getting-started.html">Getting Started</a> guide first.</p>
+                        </div>
+
+                        <h2 id="integration-options">Integration Options</h2>
+                        <p>iLEAPP AI offers several integration options to suit different needs:</p>
+                        
+                        <ol>
+                            <li><strong>Direct iLEAPP Integration</strong>: Enhance the standard iLEAPP tool with AI capabilities through our GUI and CLI integrations.</li>
+                            <li><strong>Standalone Mode</strong>: Use iLEAPP AI as a standalone tool to analyze artifacts extracted by other forensic tools.</li>
+                            <li><strong>API Integration</strong>: Integrate iLEAPP AI's capabilities into your own forensic tools or workflows using our comprehensive API.</li>
+                            <li><strong>Custom Analyzers</strong>: Extend iLEAPP AI with your own specialized analyzers for specific artifact types or investigation needs.</li>
+                        </ol>
+                        
+                        <p>Choose the integration option that best fits your workflow and requirements.</p>
+
+                        <h2 id="ileapp-integration">iLEAPP Integration</h2>
+                        <p>iLEAPP AI seamlessly integrates with the standard iLEAPP tool, enhancing its capabilities with AI-powered analysis. This integration is available for both the GUI and CLI versions of iLEAPP.</p>
+                        
+                        <h3 id="gui-integration">GUI Integration</h3>
+                        <p>The GUI integration adds an "AI Analysis" tab to the standard iLEAPP interface, allowing you to apply AI analysis to extracted artifacts with just a few clicks.</p>
+                        
+                        <h4>Installation</h4>
+                        <p>To install the GUI integration:</p>
+                        
+                        <pre><code>cd /path/to/ileapp
+pip install ileapp-ai
+python -m ileapp_ai.setup --gui</code></pre>
+                        
+                        <p>This will install the necessary components and update the iLEAPP GUI to include AI capabilities.</p>
+                        
+                        <h4>Usage</h4>
+                        <p>To use the AI capabilities in the iLEAPP GUI:</p>
+                        
+                        <ol>
+                            <li>Launch iLEAPP as usual.</li>
+                            <li>Process an iOS extraction as you normally would.</li>
+                            <li>After processing is complete, navigate to the new "AI Analysis" tab.</li>
+                            <li>Select the artifacts you want to analyze with AI.</li>
+                            <li>Choose your analysis options (depth, model, etc.).</li>
+                            <li>Click "Run AI Analysis" to begin the analysis.</li>
+                            <li>Once complete, you can view the AI-enhanced reports and insights.</li>
+                        </ol>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> The first time you use the AI features, you'll be prompted to enter your API key for the selected LLM provider.</p>
+                        </div>
+
+                        <h3 id="cli-integration">CLI Integration</h3>
+                        <p>The CLI integration extends the standard iLEAPP command-line interface with additional options for AI analysis.</p>
+                        
+                        <h4>Installation</h4>
+                        <p>To install the CLI integration:</p>
+                        
+                        <pre><code>cd /path/to/ileapp
+pip install ileapp-ai
+python -m ileapp_ai.setup --cli</code></pre>
+                        
+                        <h4>Usage</h4>
+                        <p>To use the AI capabilities from the command line:</p>
+                        
+                        <pre><code>python ileapp.py -i /path/to/extraction -o /path/to/output --ai-analyze --ai-provider openrouter --ai-key YOUR_API_KEY --ai-depth comprehensive</code></pre>
+                        
+                        <p>Available AI-specific command-line options:</p>
+                        
+                        <ul>
+                            <li><code>--ai-analyze</code>: Enable AI analysis</li>
+                            <li><code>--ai-provider</code>: LLM provider (openrouter, anthropic, openai, local)</li>
+                            <li><code>--ai-key</code>: API key for the selected provider</li>
+                            <li><code>--ai-model</code>: Specific model to use (optional)</li>
+                            <li><code>--ai-depth</code>: Analysis depth (basic, standard, comprehensive)</li>
+                            <li><code>--ai-artifacts</code>: Comma-separated list of artifacts to analyze (default: all)</li>
+                            <li><code>--ai-output</code>: Output format for AI reports (html, pdf, json)</li>
+                        </ul>
+                        
+                        <p>You can also store your API key and default settings in a configuration file to avoid entering them each time:</p>
+                        
+                        <pre><code>python -m ileapp_ai.config --set-provider openrouter --set-key YOUR_API_KEY --set-depth comprehensive</code></pre>
+
+                        <h2 id="custom-analyzers">Creating Custom Analyzers</h2>
+                        <p>iLEAPP AI allows you to create custom analyzers for specific artifact types or investigation needs. Custom analyzers extend the base <code>Analyzer</code> class and implement specialized analysis logic.</p>
+                        
+                        <h3>Basic Structure</h3>
+                        <p>A custom analyzer typically has the following structure:</p>
+                        
+                        <pre><code>from ileapp_ai import Analyzer
+
+class CustomAnalyzer(Analyzer):
+    """Custom analyzer for specific artifact type."""
+    
+    def __init__(self, llm_client, config=None):
+        super().__init__(llm_client, config)
+        # Initialize analyzer-specific properties
+        
+    def analyze(self, data, options=None):
+        """Analyze the artifact data."""
+        # Preprocess data if needed
+        # Send data to LLM for analysis
+        # Process and structure the results
+        # Return analysis results
+        
+    def generate_report(self, results, output_format="html", output_path=None):
+        """Generate a specialized report for this analyzer."""
+        # Generate a report based on the analysis results
+        # Return report information</code></pre>
+                        
+                        <h3>Example: Custom Location Analyzer</h3>
+                        <p>Here's an example of a custom analyzer for iOS location data:</p>
+                        
+                        <pre><code>from ileapp_ai import Analyzer
+from ileapp_ai.processors import get_processor
+
+class LocationAnalyzer(Analyzer):
+    """Analyzer for iOS location data with geofencing capabilities."""
+    
+    def __init__(self, llm_client, config=None):
+        super().__init__(llm_client, config)
+        self.geofences = config.get('geofences', []) if config else []
+        
+    def analyze(self, data_path, options=None):
+        # Get the appropriate processor for location data
+        processor = get_processor("location")
+        location_data = processor.process(data_path)
+        
+        # Apply geofencing if configured
+        if self.geofences:
+            location_data = self._apply_geofencing(location_data)
+        
+        # Prepare prompt for the LLM
+        prompt = """
+        Analyze this iOS location data to identify:
+        1. Frequently visited locations
+        2. Travel patterns and routines
+        3. Anomalous location activity
+        4. Timeline of movements
+        
+        For each insight, provide the supporting evidence from the data.
+        """
+        
+        # Send to LLM for analysis
+        analysis_result = self.llm_client.analyze_structured_data(
+            data=location_data,
+            prompt=prompt,
+            options=options
+        )
+        
+        # Process and structure the results
+        return self._structure_results(analysis_result, location_data)
+    
+    def _apply_geofencing(self, location_data):
+        """Apply geofencing to the location data."""
+        # Implementation of geofencing logic
+        # ...
+        return filtered_data
+    
+    def _structure_results(self, analysis_result, raw_data):
+        """Structure the analysis results."""
+        # Implementation of result structuring
+        # ...
+        return structured_results</code></pre>
+                        
+                        <h3>Registering Custom Analyzers</h3>
+                        <p>To make your custom analyzer available in iLEAPP AI, you need to register it:</p>
+                        
+                        <pre><code>from ileapp_ai.registry import register_analyzer
+
+# Register your custom analyzer
+register_analyzer("location", LocationAnalyzer)</code></pre>
+                        
+                        <p>Once registered, your custom analyzer can be used like any built-in analyzer:</p>
+                        
+                        <pre><code>from ileapp_ai import LLMClient
+from your_module import LocationAnalyzer
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+location_analyzer = LocationAnalyzer(llm_client, config={"geofences": [...]})
+results = location_analyzer.analyze("/path/to/location_data")</code></pre>
+
+                        <h2 id="report-templates">Custom Report Templates</h2>
+                        <p>iLEAPP AI uses Jinja2 templates for report generation. You can create custom report templates to customize the appearance and content of your reports.</p>
+                        
+                        <h3>Template Structure</h3>
+                        <p>Report templates are HTML files with Jinja2 template syntax. Here's a basic example:</p>
+                        
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;{{ report.title }}&lt;/title&gt;
+    &lt;style&gt;
+        /* Your custom CSS styles */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;{{ report.title }}&lt;/h1&gt;
+        &lt;p&gt;Generated on: {{ report.timestamp }}&lt;/p&gt;
+        &lt;p&gt;Case ID: {{ report.case_id }}&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;section class="summary"&gt;
+        &lt;h2&gt;Executive Summary&lt;/h2&gt;
+        &lt;p&gt;{{ report.summary }}&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;section class="artifacts"&gt;
+        &lt;h2&gt;Analyzed Artifacts&lt;/h2&gt;
+        {% for artifact in report.artifacts %}
+        &lt;div class="artifact"&gt;
+            &lt;h3&gt;{{ artifact.name }}&lt;/h3&gt;
+            &lt;p&gt;{{ artifact.description }}&lt;/p&gt;
+            
+            &lt;h4&gt;Key Findings&lt;/h4&gt;
+            &lt;ul&gt;
+                {% for finding in artifact.findings %}
+                &lt;li&gt;{{ finding }}&lt;/li&gt;
+                {% endfor %}
+            &lt;/ul&gt;
+            
+            {% if artifact.visualizations %}
+            &lt;h4&gt;Visualizations&lt;/h4&gt;
+            {% for viz in artifact.visualizations %}
+            &lt;div class="visualization"&gt;
+                &lt;img src="{{ viz.path }}" alt="{{ viz.description }}"&gt;
+                &lt;p&gt;{{ viz.description }}&lt;/p&gt;
+            &lt;/div&gt;
+            {% endfor %}
+            {% endif %}
+        &lt;/div&gt;
+        {% endfor %}
+    &lt;/section&gt;
+    
+    &lt;section class="timeline"&gt;
+        &lt;h2&gt;Event Timeline&lt;/h2&gt;
+        {% if report.timeline %}
+        &lt;div class="timeline-container"&gt;
+            {% for event in report.timeline %}
+            &lt;div class="timeline-event"&gt;
+                &lt;div class="timeline-date"&gt;{{ event.timestamp }}&lt;/div&gt;
+                &lt;div class="timeline-content"&gt;
+                    &lt;h4&gt;{{ event.title }}&lt;/h4&gt;
+                    &lt;p&gt;{{ event.description }}&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            {% endfor %}
+        &lt;/div&gt;
+        {% else %}
+        &lt;p&gt;No timeline data available.&lt;/p&gt;
+        {% endif %}
+    &lt;/section&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Generated by iLEAPP AI v{{ report.version }}&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        
+                        <h3>Using Custom Templates</h3>
+                        <p>To use a custom template for report generation:</p>
+                        
+                        <pre><code>from ileapp_ai import Analyzer, LLMClient
+from ileapp_ai.reporting import ReportGenerator
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client)
+results = analyzer.analyze_artifact("/path/to/sms.db", "messages")
+
+report_generator = ReportGenerator()
+report = report_generator.generate_report(
+    analysis_results=results,
+    template="/path/to/your/custom_template.html",
+    output_format="html",
+    output_path="/path/to/output/report.html"
+)</code></pre>
+
+                        <h2 id="api-integration">API Integration</h2>
+                        <p>iLEAPP AI provides a comprehensive API that you can integrate into your own forensic tools or workflows. This section provides examples of common API integration scenarios.</p>
+                        
+                        <h3>Basic API Usage</h3>
+                        <p>Here's a basic example of using the iLEAPP AI API in a Python script:</p>
+                        
+                        <pre><code>from ileapp_ai import Analyzer, LLMClient
+from ileapp_ai.analyzers import MessageAnalyzer
+from ileapp_ai.visualization import TimelineGenerator
+
+# Initialize the LLM client
+llm_client = LLMClient(
+    provider="openrouter",
+    api_key="your_api_key",
+    model="anthropic/claude-3-opus-20240229"
+)
+
+# Create an analyzer instance
+analyzer = Analyzer(llm_client)
+
+# Analyze iOS messages
+message_results = analyzer.analyze_artifact(
+    artifact_path="/path/to/sms.db",
+    artifact_type="messages",
+    analysis_depth="comprehensive"
+)
+
+# Generate a timeline of events
+timeline_generator = TimelineGenerator()
+timeline = timeline_generator.generate_timeline(
+    events=message_results.events,
+    output_path="/path/to/output/timeline.html"
+)
+
+# Generate a report
+report = analyzer.generate_report(
+    analysis_result=message_results,
+    output_format="pdf",
+    output_path="/path/to/output/report.pdf"
+)
+
+print(f"Analysis complete. Report saved to: {report.path}")
+print(f"Timeline saved to: {timeline.path}")</code></pre>
+                        
+                        <h3>Integration with Other Forensic Tools</h3>
+                        <p>You can integrate iLEAPP AI with other forensic tools by using their output as input for iLEAPP AI analysis:</p>
+                        
+                        <pre><code>import subprocess
+from ileapp_ai import Analyzer, LLMClient
+
+# Run another forensic tool to extract data
+subprocess.run([
+    "other_forensic_tool",
+    "--extract",
+    "/path/to/ios_backup",
+    "--output",
+    "/path/to/extraction"
+])
+
+# Initialize iLEAPP AI
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client)
+
+# Analyze the extracted data
+results = analyzer.analyze_case(
+    case_path="/path/to/extraction",
+    artifacts=["messages", "app_usage", "browser_history"],
+    analysis_depth="comprehensive"
+)
+
+# Generate a report
+report = analyzer.generate_report(results)
+print(f"Analysis complete. Report saved to: {report.path}")</code></pre>
+                        
+                        <h3>Web Application Integration</h3>
+                        <p>Here's an example of integrating iLEAPP AI into a Flask web application:</p>
+                        
+                        <pre><code>from flask import Flask, request, render_template, jsonify
+from ileapp_ai import Analyzer, LLMClient
+import os
+
+app = Flask(__name__)
+upload_folder = "/path/to/uploads"
+output_folder = "/path/to/outputs"
+
+# Initialize iLEAPP AI
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+    
+    # Save the uploaded file
+    file_path = os.path.join(upload_folder, file.filename)
+    file.save(file_path)
+    
+    # Get analysis options from the form
+    artifact_type = request.form.get('artifact_type', 'messages')
+    analysis_depth = request.form.get('analysis_depth', 'standard')
+    
+    # Analyze the artifact
+    try:
+        results = analyzer.analyze_artifact(
+            artifact_path=file_path,
+            artifact_type=artifact_type,
+            analysis_depth=analysis_depth
+        )
+        
+        # Generate a report
+        report = analyzer.generate_report(
+            analysis_result=results,
+            output_format="html",
+            output_path=os.path.join(output_folder, f"{file.filename}_report.html")
+        )
+        
+        return jsonify({
+            "success": True,
+            "report_url": f"/reports/{os.path.basename(report.path)}",
+            "summary": results.summary
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/reports/<filename>')
+def get_report(filename):
+    return send_from_directory(output_folder, filename)
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+
+                        <h2 id="security-considerations">Security Considerations</h2>
+                        <p>When integrating iLEAPP AI into your forensic workflow, consider the following security best practices:</p>
+                        
+                        <h3>Data Privacy</h3>
+                        <ul>
+                            <li>Use local LLM models for sensitive investigations to avoid sending data to external APIs.</li>
+                            <li>If using external APIs, ensure data is properly anonymized or redacted before sending.</li>
+                            <li>Be aware of the data retention policies of your chosen LLM provider.</li>
+                        </ul>
+                        
+                        <h3>Chain of Custody</h3>
+                        <ul>
+                            <li>Use the built-in <code>ChainOfCustody</code> class to track all actions performed on forensic data.</li>
+                            <li>Enable audit logging to maintain a record of all analysis activities.</li>
+                            <li>Include hash verification in your workflow to ensure data integrity.</li>
+                        </ul>
+                        
+                        <h3>API Key Security</h3>
+                        <ul>
+                            <li>Store API keys securely, preferably in environment variables or a secure credential store.</li>
+                            <li>Never hardcode API keys in your scripts or applications.</li>
+                            <li>Use API keys with appropriate permission scopes and restrictions.</li>
+                        </ul>
+                        
+                        <h3>Example: Secure API Key Storage</h3>
+                        <pre><code>import os
+from ileapp_ai import LLMClient
+
+# Get API key from environment variable
+api_key = os.environ.get('OPENROUTER_API_KEY')
+if not api_key:
+    raise ValueError("API key not found in environment variables")
+
+# Initialize client with the API key
+llm_client = LLMClient(provider="openrouter", api_key=api_key)</code></pre>
+                        
+                        <h3>Example: Enabling Audit Logging</h3>
+                        <pre><code>from ileapp_ai import Analyzer, LLMClient
+from ileapp_ai.security import ChainOfCustody, enable_audit_logging
+
+# Enable audit logging
+enable_audit_logging(log_path="/path/to/audit.log")
+
+# Initialize chain of custody
+chain_of_custody = ChainOfCustody(
+    case_id="CASE-2025-001",
+    investigator="John Doe"
+)
+
+# Initialize client and analyzer
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client)
+
+# Log the analysis action
+action_id = chain_of_custody.log_action(
+    action="Analyzing messages",
+    artifact="/path/to/sms.db"
+)
+
+# Perform the analysis
+results = analyzer.analyze_artifact(
+    artifact_path="/path/to/sms.db",
+    artifact_type="messages"
+)
+
+# Log the completion of the analysis
+chain_of_custody.log_action(
+    action="Analysis completed",
+    artifact="/path/to/sms.db",
+    details={"action_id": action_id, "findings": len(results.findings)}
+)</code></pre>
+
+                        <h2 id="troubleshooting">Troubleshooting</h2>
+                        <p>This section covers common issues you might encounter when integrating iLEAPP AI and how to resolve them.</p>
+                        
+                        <h3>API Connection Issues</h3>
+                        <p>If you're having trouble connecting to the LLM provider's API:</p>
+                        <ul>
+                            <li>Verify that your API key is correct and has not expired.</li>
+                            <li>Check your internet connection and firewall settings.</li>
+                            <li>Ensure the LLM provider's services are operational.</li>
+                            <li>Try using a different provider or model to isolate the issue.</li>
+                        </ul>
+                        
+                        <h3>Integration Errors</h3>
+                        <p>If you encounter errors when integrating with iLEAPP:</p>
+                        <ul>
+                            <li>Ensure you're using compatible versions of iLEAPP and iLEAPP AI.</li>
+                            <li>Check that all required dependencies are installed.</li>
+                            <li>Verify that the integration setup was completed successfully.</li>
+                            <li>Check the iLEAPP log files for specific error messages.</li>
+                        </ul>
+                        
+                        <h3>Analysis Quality Issues</h3>
+                        <p>If the AI analysis results are not meeting your expectations:</p>
+                        <ul>
+                            <li>Try using a more advanced model (e.g., Claude 3 Opus instead of Claude 3 Sonnet).</li>
+                            <li>Increase the analysis depth to "comprehensive" for more detailed results.</li>
+                            <li>Check that the artifact data is in the expected format and contains sufficient information.</li>
+                            <li>Consider creating a custom analyzer with more specific prompts for your use case.</li>
+                        </ul>
+                        
+                        <h3>Performance Issues</h3>
+                        <p>If you're experiencing slow performance:</p>
+                        <ul>
+                            <li>For large datasets, consider processing artifacts in smaller batches.</li>
+                            <li>Use a local LLM model for faster processing if API latency is an issue.</li>
+                            <li>Optimize your custom code to reduce unnecessary processing or API calls.</li>
+                            <li>Check system resources (CPU, memory, disk I/O) for bottlenecks.</li>
+                        </ul>
+                        
+                        <h3>Getting Help</h3>
+                        <p>If you continue to experience issues:</p>
+                        <ul>
+                            <li>Check the <a href="https://github.com/abrignoni/iLEAPP" target="_blank">iLEAPP GitHub repository</a> for known issues and solutions.</li>
+                            <li>Join the iLEAPP community forums for peer support.</li>
+                            <li>Contact our support team at support@ileapp-ai.com.</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> This integration guide is for iLEAPP AI version 1.0.0. Future versions may include additional integration options and features.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>iLEAPP<span>AI</span></h2>
+                    <p>Enhanced iOS Forensics with Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Product</h3>
+                        <ul>
+                            <li><a href="../index.html#features">Features</a></li>
+                            <li><a href="../index.html#how-it-works">How It Works</a></li>
+                            <li><a href="../index.html#demo">Demo</a></li>
+                            <li><a href="../downloads/">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api-reference.html">API Reference</a></li>
+                            <li><a href="integration-guide.html">Integration Guide</a></li>
+                            <li><a href="enhanced-features.html">Enhanced Features</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="../index.html#resources">Research & Trends</a></li>
+                            <li><a href="../index.html#resources">External Resources</a></li>
+                            <li><a href="../index.html#resources">Case Studies</a></li>
+                            <li><a href="../index.html#resources">Tools & Techniques</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 iLEAPP AI. All rights reserved.</p>
+                <p>Based on <a href="https://github.com/abrignoni/iLEAPP" target="_blank">iLEAPP</a> by Alexis Brignoni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

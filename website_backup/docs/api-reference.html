@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLEAPP AI - API Reference</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .docs-container {
+            padding: 2rem 0;
+        }
+        .docs-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        .docs-content h2 {
+            margin-top: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-color);
+        }
+        .docs-content h2:first-child {
+            margin-top: 0;
+        }
+        .docs-content h3 {
+            margin-top: 1.5rem;
+            color: var(--primary-color);
+        }
+        .docs-content p {
+            margin-bottom: 1rem;
+        }
+        .docs-content ul, .docs-content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        .docs-content ul li, .docs-content ol li {
+            margin-bottom: 0.5rem;
+        }
+        .docs-content pre {
+            background-color: var(--light-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .docs-content code {
+            font-family: monospace;
+            background-color: var(--light-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        .docs-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        .docs-content img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+        }
+        .docs-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-left: 0;
+            color: var(--secondary-color);
+        }
+        .docs-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .docs-content table th, .docs-content table td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+        .docs-content table th {
+            background-color: var(--light-color);
+        }
+        .docs-content .note {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .docs-content .warning {
+            background-color: #fff9db;
+            border-left: 4px solid #ffd43b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .docs-nav {
+            position: sticky;
+            top: 100px;
+        }
+        .docs-nav ul {
+            padding-left: 0;
+        }
+        .docs-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+        .docs-nav ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        .docs-nav ul li a:hover, .docs-nav ul li a.active {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        .docs-nav ul li ul {
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        .docs-layout {
+            display: flex;
+            gap: 2rem;
+        }
+        .docs-sidebar {
+            flex: 1;
+            max-width: 250px;
+        }
+        .docs-main {
+            flex: 3;
+        }
+        .method {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--light-color);
+        }
+        .method:last-child {
+            border-bottom: none;
+        }
+        .method-signature {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            margin-bottom: 1rem;
+        }
+        .parameter-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .parameter-table th, .parameter-table td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+        .parameter-table th {
+            background-color: var(--light-color);
+        }
+        .return-value {
+            background-color: var(--light-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+        .example-code {
+            margin-top: 1rem;
+        }
+        @media (max-width: 992px) {
+            .docs-layout {
+                flex-direction: column;
+            }
+            .docs-sidebar {
+                max-width: 100%;
+            }
+            .docs-nav {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>iLEAPP<span>AI</span></h1>
+                <p>Enhanced iOS Forensics with Artificial Intelligence</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="../index.html#how-it-works">How It Works</a></li>
+                    <li><a href="../index.html#demo">Demo</a></li>
+                    <li><a href="../index.html#documentation">Documentation</a></li>
+                    <li><a href="../index.html#resources">Resources</a></li>
+                    <li><a href="../downloads/" class="btn">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>API Reference</h1>
+            <p>Comprehensive documentation of the iLEAPP AI API for developers</p>
+        </div>
+    </section>
+
+    <section class="docs-container">
+        <div class="container">
+            <div class="docs-layout">
+                <div class="docs-sidebar">
+                    <div class="docs-nav">
+                        <h3>On This Page</h3>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#getting-started">Getting Started</a></li>
+                            <li><a href="#core-modules">Core Modules</a>
+                                <ul>
+                                    <li><a href="#analyzer">Analyzer</a></li>
+                                    <li><a href="#llm-client">LLM Client</a></li>
+                                    <li><a href="#artifact-processors">Artifact Processors</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#specialized-analyzers">Specialized Analyzers</a>
+                                <ul>
+                                    <li><a href="#message-analyzer">Message Analyzer</a></li>
+                                    <li><a href="#app-usage-analyzer">App Usage Analyzer</a></li>
+                                    <li><a href="#browser-history-analyzer">Browser History Analyzer</a></li>
+                                    <li><a href="#itunes-analyzer">iTunes Analyzer</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#visualization">Visualization</a></li>
+                            <li><a href="#report-generation">Report Generation</a></li>
+                            <li><a href="#security">Security</a></li>
+                            <li><a href="#extending">Extending iLEAPP AI</a></li>
+                        </ul>
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api-reference.html" class="active">API Reference</a></li>
+                            <li><a href="integration-guide.html">Integration Guide</a></li>
+                            <li><a href="enhanced-features.html">Enhanced Features</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="docs-main">
+                    <div class="docs-content">
+                        <h2 id="introduction">Introduction</h2>
+                        <p>The iLEAPP AI API provides a comprehensive set of tools for integrating AI-powered forensic analysis capabilities into your applications. This reference documents all the available modules, classes, and methods that you can use to interact with iLEAPP AI programmatically.</p>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> This API reference assumes you have a basic understanding of Python programming and digital forensics concepts. If you're new to iLEAPP AI, we recommend starting with the <a href="getting-started.html">Getting Started</a> guide.</p>
+                        </div>
+
+                        <h2 id="getting-started">Getting Started with the API</h2>
+                        <p>To use the iLEAPP AI API in your Python code, you first need to import the necessary modules:</p>
+                        
+                        <pre><code>from ileapp_ai import Analyzer, LLMClient
+from ileapp_ai.analyzers import MessageAnalyzer, AppUsageAnalyzer
+from ileapp_ai.security import ChainOfCustody
+from ileapp_ai.visualization import TimelineGenerator</code></pre>
+                        
+                        <p>A basic example of using the API to analyze iOS messages:</p>
+                        
+                        <pre><code>from ileapp_ai import Analyzer, LLMClient
+
+# Initialize the LLM client with your API key
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+
+# Create an analyzer instance
+analyzer = Analyzer(llm_client=llm_client)
+
+# Analyze iOS messages
+results = analyzer.analyze_artifact(
+    artifact_path="/path/to/sms.db",
+    artifact_type="messages",
+    analysis_depth="comprehensive"
+)
+
+# Print the results
+print(results.summary)
+print(results.insights)
+
+# Generate a report
+report = analyzer.generate_report(results, output_format="html")
+print(f"Report generated at: {report.path}")</code></pre>
+
+                        <h2 id="core-modules">Core Modules</h2>
+                        
+                        <h3 id="analyzer">Analyzer</h3>
+                        <p>The <code>Analyzer</code> class is the main entry point for the iLEAPP AI API. It provides methods for analyzing iOS artifacts and generating reports.</p>
+                        
+                        <div class="method">
+                            <h4>Analyzer(llm_client, config=None)</h4>
+                            <p>Constructor for the Analyzer class.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>llm_client</td>
+                                        <td>LLMClient</td>
+                                        <td>An instance of the LLMClient class for communicating with AI models.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>config</td>
+                                        <td>dict, optional</td>
+                                        <td>Configuration options for the analyzer. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai import Analyzer, LLMClient
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client=llm_client)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>analyze_artifact(artifact_path, artifact_type, analysis_depth="standard", options=None)</h4>
+                            <p>Analyzes an iOS artifact using AI capabilities.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>artifact_path</td>
+                                        <td>str</td>
+                                        <td>Path to the artifact file or directory.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>artifact_type</td>
+                                        <td>str</td>
+                                        <td>Type of artifact (e.g., "messages", "app_usage", "browser_history").</td>
+                                    </tr>
+                                    <tr>
+                                        <td>analysis_depth</td>
+                                        <td>str, optional</td>
+                                        <td>Depth of analysis: "basic", "standard", or "comprehensive". Defaults to "standard".</td>
+                                    </tr>
+                                    <tr>
+                                        <td>options</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional options for the analysis. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>AnalysisResult</strong>: An object containing the analysis results, including summary, insights, and raw data.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>results = analyzer.analyze_artifact(
+    artifact_path="/path/to/sms.db",
+    artifact_type="messages",
+    analysis_depth="comprehensive"
+)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>analyze_case(case_path, artifacts=None, analysis_depth="standard", options=None)</h4>
+                            <p>Analyzes multiple artifacts from an iOS case directory.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>case_path</td>
+                                        <td>str</td>
+                                        <td>Path to the case directory containing multiple artifacts.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>artifacts</td>
+                                        <td>list, optional</td>
+                                        <td>List of artifact types to analyze. If None, analyzes all supported artifacts.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>analysis_depth</td>
+                                        <td>str, optional</td>
+                                        <td>Depth of analysis: "basic", "standard", or "comprehensive". Defaults to "standard".</td>
+                                    </tr>
+                                    <tr>
+                                        <td>options</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional options for the analysis. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>CaseAnalysisResult</strong>: An object containing the analysis results for all artifacts, including cross-artifact correlations.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>case_results = analyzer.analyze_case(
+    case_path="/path/to/case_directory",
+    artifacts=["messages", "app_usage", "browser_history"],
+    analysis_depth="comprehensive"
+)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>generate_report(analysis_result, output_format="html", template=None, output_path=None)</h4>
+                            <p>Generates a report from analysis results.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>analysis_result</td>
+                                        <td>AnalysisResult or CaseAnalysisResult</td>
+                                        <td>The result object from analyze_artifact or analyze_case.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output_format</td>
+                                        <td>str, optional</td>
+                                        <td>Format of the report: "html", "pdf", or "json". Defaults to "html".</td>
+                                    </tr>
+                                    <tr>
+                                        <td>template</td>
+                                        <td>str, optional</td>
+                                        <td>Path to a custom report template. Defaults to None (uses built-in template).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output_path</td>
+                                        <td>str, optional</td>
+                                        <td>Path where the report should be saved. Defaults to None (auto-generated).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>Report</strong>: An object containing information about the generated report, including its path.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>report = analyzer.generate_report(
+    analysis_result=results,
+    output_format="pdf",
+    output_path="/path/to/output/report.pdf"
+)</code></pre>
+                            </div>
+                        </div>
+
+                        <h3 id="llm-client">LLM Client</h3>
+                        <p>The <code>LLMClient</code> class provides an interface for communicating with various AI models through different providers.</p>
+                        
+                        <div class="method">
+                            <h4>LLMClient(provider, api_key=None, model=None, config=None)</h4>
+                            <p>Constructor for the LLMClient class.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>provider</td>
+                                        <td>str</td>
+                                        <td>The AI provider to use: "openrouter", "anthropic", "openai", or "local".</td>
+                                    </tr>
+                                    <tr>
+                                        <td>api_key</td>
+                                        <td>str, optional</td>
+                                        <td>API key for the provider. Not required for "local" provider.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>model</td>
+                                        <td>str, optional</td>
+                                        <td>Specific model to use. If None, uses the provider's default model.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>config</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional configuration options for the client. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai import LLMClient
+
+# Using OpenRouter
+client = LLMClient(
+    provider="openrouter",
+    api_key="your_openrouter_api_key",
+    model="anthropic/claude-3-opus-20240229"
+)
+
+# Using a local model
+local_client = LLMClient(
+    provider="local",
+    model="llama-3-70b"
+)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>analyze_text(text, prompt=None, options=None)</h4>
+                            <p>Analyzes text using the configured AI model.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>str</td>
+                                        <td>The text to analyze.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>prompt</td>
+                                        <td>str, optional</td>
+                                        <td>Custom prompt to guide the analysis. Defaults to None (uses standard prompt).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>options</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional options for the analysis. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>dict</strong>: The analysis result from the AI model.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>result = client.analyze_text(
+    text="Hello, how are you doing today?",
+    prompt="Analyze the sentiment and tone of this message."
+)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>analyze_structured_data(data, prompt=None, options=None)</h4>
+                            <p>Analyzes structured data (JSON, dict, etc.) using the configured AI model.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>data</td>
+                                        <td>dict or list</td>
+                                        <td>The structured data to analyze.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>prompt</td>
+                                        <td>str, optional</td>
+                                        <td>Custom prompt to guide the analysis. Defaults to None (uses standard prompt).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>options</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional options for the analysis. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>dict</strong>: The analysis result from the AI model.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>app_usage_data = [
+    {"app": "Messages", "duration": 3600, "timestamp": "2025-04-01T12:00:00"},
+    {"app": "Safari", "duration": 1800, "timestamp": "2025-04-01T13:00:00"},
+    {"app": "Camera", "duration": 300, "timestamp": "2025-04-01T15:00:00"}
+]
+
+result = client.analyze_structured_data(
+    data=app_usage_data,
+    prompt="Identify patterns in this app usage data."
+)</code></pre>
+                            </div>
+                        </div>
+
+                        <h3 id="artifact-processors">Artifact Processors</h3>
+                        <p>The <code>ArtifactProcessor</code> classes handle the extraction and preprocessing of different types of iOS artifacts before they are analyzed by AI models.</p>
+                        
+                        <div class="method">
+                            <h4>get_processor(artifact_type)</h4>
+                            <p>Factory method to get the appropriate processor for a given artifact type.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>artifact_type</td>
+                                        <td>str</td>
+                                        <td>Type of artifact (e.g., "messages", "app_usage", "browser_history").</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>ArtifactProcessor</strong>: An instance of the appropriate processor class.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai.processors import get_processor
+
+processor = get_processor("messages")
+processed_data = processor.process("/path/to/sms.db")</code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="specialized-analyzers">Specialized Analyzers</h2>
+                        <p>iLEAPP AI includes specialized analyzers for different types of iOS artifacts. These analyzers extend the base <code>Analyzer</code> class with artifact-specific functionality.</p>
+                        
+                        <h3 id="message-analyzer">Message Analyzer</h3>
+                        <p>The <code>MessageAnalyzer</code> class provides specialized analysis for iOS messages and conversations.</p>
+                        
+                        <div class="method">
+                            <h4>MessageAnalyzer(llm_client, config=None)</h4>
+                            <p>Constructor for the MessageAnalyzer class.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>llm_client</td>
+                                        <td>LLMClient</td>
+                                        <td>An instance of the LLMClient class for communicating with AI models.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>config</td>
+                                        <td>dict, optional</td>
+                                        <td>Configuration options for the analyzer. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai import LLMClient
+from ileapp_ai.analyzers import MessageAnalyzer
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+message_analyzer = MessageAnalyzer(llm_client=llm_client)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>analyze_conversations(messages_data, options=None)</h4>
+                            <p>Analyzes conversations from iOS messages data.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>messages_data</td>
+                                        <td>dict or list</td>
+                                        <td>Processed messages data from a MessageProcessor.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>options</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional options for the analysis. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>ConversationAnalysisResult</strong>: An object containing the analysis results for conversations.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai.processors import get_processor
+
+processor = get_processor("messages")
+messages_data = processor.process("/path/to/sms.db")
+
+conversation_results = message_analyzer.analyze_conversations(messages_data)</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Additional specialized analyzers would be documented here -->
+
+                        <h2 id="visualization">Visualization</h2>
+                        <p>The visualization module provides tools for creating visual representations of forensic data and analysis results.</p>
+                        
+                        <div class="method">
+                            <h4>TimelineGenerator(config=None)</h4>
+                            <p>Constructor for the TimelineGenerator class, which creates interactive timelines from forensic data.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>config</td>
+                                        <td>dict, optional</td>
+                                        <td>Configuration options for the timeline generator. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai.visualization import TimelineGenerator
+
+timeline_generator = TimelineGenerator()</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>generate_timeline(events, output_path=None, options=None)</h4>
+                            <p>Generates an interactive timeline from a list of events.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>events</td>
+                                        <td>list</td>
+                                        <td>List of event dictionaries, each with at least 'timestamp' and 'description' keys.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output_path</td>
+                                        <td>str, optional</td>
+                                        <td>Path where the timeline should be saved. Defaults to None (auto-generated).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>options</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional options for the timeline generation. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>Timeline</strong>: An object containing information about the generated timeline, including its path.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>events = [
+    {
+        "timestamp": "2025-04-01T12:00:00",
+        "description": "Message sent to John",
+        "type": "message",
+        "details": {"recipient": "John", "content": "Hello"}
+    },
+    {
+        "timestamp": "2025-04-01T12:05:00",
+        "description": "Opened Safari",
+        "type": "app_usage",
+        "details": {"app": "Safari", "duration": 300}
+    }
+]
+
+timeline = timeline_generator.generate_timeline(
+    events=events,
+    output_path="/path/to/output/timeline.html"
+)</code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="report-generation">Report Generation</h2>
+                        <p>The report generation module provides tools for creating comprehensive forensic reports from analysis results.</p>
+                        
+                        <div class="method">
+                            <h4>ReportGenerator(config=None)</h4>
+                            <p>Constructor for the ReportGenerator class.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>config</td>
+                                        <td>dict, optional</td>
+                                        <td>Configuration options for the report generator. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai.reporting import ReportGenerator
+
+report_generator = ReportGenerator()</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>generate_report(analysis_results, template=None, output_format="html", output_path=None, options=None)</h4>
+                            <p>Generates a report from analysis results.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>analysis_results</td>
+                                        <td>dict or AnalysisResult</td>
+                                        <td>The analysis results to include in the report.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>template</td>
+                                        <td>str, optional</td>
+                                        <td>Path to a custom report template. Defaults to None (uses built-in template).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output_format</td>
+                                        <td>str, optional</td>
+                                        <td>Format of the report: "html", "pdf", or "json". Defaults to "html".</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output_path</td>
+                                        <td>str, optional</td>
+                                        <td>Path where the report should be saved. Defaults to None (auto-generated).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>options</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional options for the report generation. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>Report</strong>: An object containing information about the generated report, including its path.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai import Analyzer, LLMClient
+from ileapp_ai.reporting import ReportGenerator
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client=llm_client)
+results = analyzer.analyze_artifact("/path/to/sms.db", "messages")
+
+report_generator = ReportGenerator()
+report = report_generator.generate_report(
+    analysis_results=results,
+    output_format="pdf",
+    output_path="/path/to/output/report.pdf"
+)</code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="security">Security</h2>
+                        <p>The security module provides tools for maintaining forensic integrity and chain of custody.</p>
+                        
+                        <div class="method">
+                            <h4>ChainOfCustody(case_id, investigator=None, config=None)</h4>
+                            <p>Constructor for the ChainOfCustody class, which tracks all actions performed on forensic data.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>case_id</td>
+                                        <td>str</td>
+                                        <td>Unique identifier for the case.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>investigator</td>
+                                        <td>str, optional</td>
+                                        <td>Name or ID of the investigator. Defaults to None.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>config</td>
+                                        <td>dict, optional</td>
+                                        <td>Configuration options for the chain of custody. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>from ileapp_ai.security import ChainOfCustody
+
+chain_of_custody = ChainOfCustody(
+    case_id="CASE-2025-001",
+    investigator="John Doe"
+)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method">
+                            <h4>log_action(action, artifact=None, details=None)</h4>
+                            <p>Logs an action in the chain of custody.</p>
+                            
+                            <h5>Parameters:</h5>
+                            <table class="parameter-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>action</td>
+                                        <td>str</td>
+                                        <td>Description of the action performed.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>artifact</td>
+                                        <td>str, optional</td>
+                                        <td>The artifact affected by the action. Defaults to None.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>details</td>
+                                        <td>dict, optional</td>
+                                        <td>Additional details about the action. Defaults to None.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h5>Returns:</h5>
+                            <div class="return-value">
+                                <p><strong>str</strong>: The ID of the logged action.</p>
+                            </div>
+                            
+                            <div class="example-code">
+                                <h5>Example:</h5>
+                                <pre><code>action_id = chain_of_custody.log_action(
+    action="Analyzed messages",
+    artifact="/path/to/sms.db",
+    details={"analysis_depth": "comprehensive", "model": "claude-3-opus"}
+)</code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="extending">Extending iLEAPP AI</h2>
+                        <p>iLEAPP AI is designed to be extensible. You can create custom analyzers, processors, and report templates to suit your specific needs.</p>
+                        
+                        <p>For detailed information on extending iLEAPP AI, please refer to the <a href="integration-guide.html">Integration Guide</a>.</p>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> This API reference is for iLEAPP AI version 1.0.0. Future versions may include additional functionality and changes to the API.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>iLEAPP<span>AI</span></h2>
+                    <p>Enhanced iOS Forensics with Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Product</h3>
+                        <ul>
+                            <li><a href="../index.html#features">Features</a></li>
+                            <li><a href="../index.html#how-it-works">How It Works</a></li>
+                            <li><a href="../index.html#demo">Demo</a></li>
+                            <li><a href="../downloads/">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api-reference.html">API Reference</a></li>
+                            <li><a href="integration-guide.html">Integration Guide</a></li>
+                            <li><a href="enhanced-features.html">Enhanced Features</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="../index.html#resources">Research & Trends</a></li>
+                            <li><a href="../index.html#resources">External Resources</a></li>
+                            <li><a href="../index.html#resources">Case Studies</a></li>
+                            <li><a href="../index.html#resources">Tools & Techniques</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 iLEAPP AI. All rights reserved.</p>
+                <p>Based on <a href="https://github.com/abrignoni/iLEAPP" target="_blank">iLEAPP</a> by Alexis Brignoni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

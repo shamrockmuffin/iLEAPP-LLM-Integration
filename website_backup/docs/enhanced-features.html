@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLEAPP AI - Enhanced Features</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .docs-container {
+            padding: 2rem 0;
+        }
+        .docs-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        .docs-content h2 {
+            margin-top: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-color);
+        }
+        .docs-content h2:first-child {
+            margin-top: 0;
+        }
+        .docs-content h3 {
+            margin-top: 1.5rem;
+            color: var(--primary-color);
+        }
+        .docs-content p {
+            margin-bottom: 1rem;
+        }
+        .docs-content ul, .docs-content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        .docs-content ul li, .docs-content ol li {
+            margin-bottom: 0.5rem;
+        }
+        .docs-content pre {
+            background-color: var(--light-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .docs-content code {
+            font-family: monospace;
+            background-color: var(--light-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        .docs-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        .docs-content img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+        }
+        .docs-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-left: 0;
+            color: var(--secondary-color);
+        }
+        .docs-content .note {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .docs-content .warning {
+            background-color: #fff9db;
+            border-left: 4px solid #ffd43b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .docs-nav {
+            position: sticky;
+            top: 100px;
+        }
+        .docs-nav ul {
+            padding-left: 0;
+        }
+        .docs-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+        .docs-nav ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        .docs-nav ul li a:hover, .docs-nav ul li a.active {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        .docs-nav ul li ul {
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        .docs-layout {
+            display: flex;
+            gap: 2rem;
+        }
+        .docs-sidebar {
+            flex: 1;
+            max-width: 250px;
+        }
+        .docs-main {
+            flex: 3;
+        }
+        .feature-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .feature-card p {
+            margin-bottom: 1rem;
+        }
+        .feature-card .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 992px) {
+            .docs-layout {
+                flex-direction: column;
+            }
+            .docs-sidebar {
+                max-width: 100%;
+            }
+            .docs-nav {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>iLEAPP<span>AI</span></h1>
+                <p>Enhanced iOS Forensics with Artificial Intelligence</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="../index.html#how-it-works">How It Works</a></li>
+                    <li><a href="../index.html#demo">Demo</a></li>
+                    <li><a href="../index.html#documentation">Documentation</a></li>
+                    <li><a href="../index.html#resources">Resources</a></li>
+                    <li><a href="../downloads/" class="btn">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Enhanced Features</h1>
+            <p>Explore the advanced capabilities that iLEAPP AI brings to iOS forensic analysis</p>
+        </div>
+    </section>
+
+    <section class="docs-container">
+        <div class="container">
+            <div class="docs-layout">
+                <div class="docs-sidebar">
+                    <div class="docs-nav">
+                        <h3>On This Page</h3>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#artifact-analyzers">Artifact-Specific Analyzers</a>
+                                <ul>
+                                    <li><a href="#message-analyzer">Message Analyzer</a></li>
+                                    <li><a href="#app-usage-analyzer">App Usage Analyzer</a></li>
+                                    <li><a href="#itunes-analyzer">iTunes Music Analyzer</a></li>
+                                    <li><a href="#chrome-analyzer">Chrome History Analyzer</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#timeline-visualization">Timeline Visualization</a></li>
+                            <li><a href="#report-generation">Automated Report Generation</a></li>
+                            <li><a href="#appendices">Appendices Generation</a></li>
+                            <li><a href="#security-features">Security Features</a></li>
+                            <li><a href="#user-dashboard">User Dashboard</a></li>
+                            <li><a href="#integration-options">Integration Options</a></li>
+                        </ul>
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api-reference.html">API Reference</a></li>
+                            <li><a href="integration-guide.html">Integration Guide</a></li>
+                            <li><a href="enhanced-features.html" class="active">Enhanced Features</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="docs-main">
+                    <div class="docs-content">
+                        <h2 id="introduction">Introduction</h2>
+                        <p>iLEAPP AI extends the capabilities of the standard iLEAPP tool with advanced artificial intelligence features that enhance digital forensic investigations. This document provides detailed information about these enhanced features and how they can be used to improve your forensic workflow.</p>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> All enhanced features are available in both the GUI and CLI versions of iLEAPP AI. For information on how to access these features, please refer to the <a href="integration-guide.html">Integration Guide</a>.</p>
+                        </div>
+
+                        <h2 id="artifact-analyzers">Artifact-Specific Analyzers</h2>
+                        <p>iLEAPP AI includes specialized analyzers for different types of iOS artifacts. These analyzers use artificial intelligence to extract insights and patterns that might not be immediately apparent through manual analysis.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                            <h3 id="message-analyzer">Message Analyzer</h3>
+                            <p>The Message Analyzer provides advanced analysis of iOS messages and conversations, helping investigators understand communication patterns and extract valuable insights.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Conversation Threading</strong>: Automatically organizes messages into coherent conversations, even across different communication channels.</li>
+                                <li><strong>Sentiment Analysis</strong>: Identifies the emotional tone of messages and tracks sentiment changes over time.</li>
+                                <li><strong>Topic Extraction</strong>: Identifies key topics and themes discussed in conversations.</li>
+                                <li><strong>Entity Recognition</strong>: Identifies people, places, organizations, dates, and other entities mentioned in messages.</li>
+                                <li><strong>Contact Correlation</strong>: Links contacts across different communication channels and identifies key relationships.</li>
+                                <li><strong>Language Detection</strong>: Identifies the language used in messages and provides translations when needed.</li>
+                                <li><strong>Pattern Detection</strong>: Identifies communication patterns, such as frequency, timing, and response rates.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.analyzers import MessageAnalyzer
+from ileapp_ai import LLMClient
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+message_analyzer = MessageAnalyzer(llm_client)
+
+results = message_analyzer.analyze("/path/to/sms.db")
+print(f"Found {len(results.conversations)} conversations")
+print(f"Top topics: {results.top_topics}")
+print(f"Overall sentiment: {results.overall_sentiment}")</code></pre>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h3 id="app-usage-analyzer">App Usage Analyzer</h3>
+                            <p>The App Usage Analyzer examines iOS app usage data to identify patterns, preferences, and behaviors that can provide valuable context for investigations.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Usage Patterns</strong>: Identifies when and how often specific apps are used.</li>
+                                <li><strong>Screen Time Analysis</strong>: Analyzes total screen time and distribution across different app categories.</li>
+                                <li><strong>App Transitions</strong>: Tracks sequences of app usage to identify common workflows.</li>
+                                <li><strong>Behavioral Profiling</strong>: Creates profiles of user behavior based on app usage patterns.</li>
+                                <li><strong>Anomaly Detection</strong>: Identifies unusual app usage that deviates from established patterns.</li>
+                                <li><strong>Category Analysis</strong>: Groups apps by category to understand user interests and priorities.</li>
+                                <li><strong>Temporal Analysis</strong>: Examines how app usage changes over time, including daily, weekly, and monthly patterns.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.analyzers import AppUsageAnalyzer
+from ileapp_ai import LLMClient
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+app_usage_analyzer = AppUsageAnalyzer(llm_client)
+
+results = app_usage_analyzer.analyze("/path/to/app_usage.db")
+print(f"Most used apps: {results.most_used_apps}")
+print(f"Daily usage pattern: {results.daily_pattern}")
+print(f"Unusual activity detected: {results.anomalies}")</code></pre>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-music"></i></div>
+                            <h3 id="itunes-analyzer">iTunes Music Analyzer</h3>
+                            <p>The iTunes Music Analyzer examines music listening history and preferences, providing insights into user interests and activities.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Listening Patterns</strong>: Identifies when and how often music is played.</li>
+                                <li><strong>Genre Preferences</strong>: Analyzes preferred music genres and how they change over time.</li>
+                                <li><strong>Artist Analysis</strong>: Identifies favorite artists and listening frequency.</li>
+                                <li><strong>Playlist Analysis</strong>: Examines created playlists for themes and patterns.</li>
+                                <li><strong>Purchase History</strong>: Analyzes music purchases and downloads.</li>
+                                <li><strong>Temporal Analysis</strong>: Examines how music preferences change over time.</li>
+                                <li><strong>Mood Analysis</strong>: Infers emotional states based on music choices.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.analyzers import iTunesMusicAnalyzer
+from ileapp_ai import LLMClient
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+itunes_analyzer = iTunesMusicAnalyzer(llm_client)
+
+results = itunes_analyzer.analyze("/path/to/itunes_library.db")
+print(f"Top genres: {results.top_genres}")
+print(f"Favorite artists: {results.favorite_artists}")
+print(f"Listening schedule: {results.listening_schedule}")</code></pre>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                            <h3 id="chrome-analyzer">Chrome History Analyzer</h3>
+                            <p>The Chrome History Analyzer examines iOS Chrome browsing history to identify web usage patterns, interests, and activities.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Browsing Patterns</strong>: Identifies when and how often the web is browsed.</li>
+                                <li><strong>Domain Categorization</strong>: Categorizes visited websites by type (e.g., social media, news, shopping).</li>
+                                <li><strong>Search Analysis</strong>: Analyzes search queries for topics and interests.</li>
+                                <li><strong>Temporal Analysis</strong>: Examines how browsing behavior changes over time.</li>
+                                <li><strong>Interest Profiling</strong>: Creates profiles of user interests based on browsing history.</li>
+                                <li><strong>Session Analysis</strong>: Identifies browsing sessions and the flow between websites.</li>
+                                <li><strong>Bookmark Analysis</strong>: Examines bookmarked sites for long-term interests.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.analyzers import ChromeHistoryAnalyzer
+from ileapp_ai import LLMClient
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+chrome_analyzer = ChromeHistoryAnalyzer(llm_client)
+
+results = chrome_analyzer.analyze("/path/to/chrome_history.db")
+print(f"Top domains: {results.top_domains}")
+print(f"Search interests: {results.search_interests}")
+print(f"Browsing schedule: {results.browsing_schedule}")</code></pre>
+                        </div>
+
+                        <h2 id="timeline-visualization">Timeline Visualization</h2>
+                        <p>iLEAPP AI includes advanced timeline visualization capabilities that help investigators understand the chronological sequence of events across different artifact types.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                            <h3>Interactive Timeline</h3>
+                            <p>The timeline visualization tool creates interactive timelines that combine events from different artifact types, providing a comprehensive view of user activities.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Multi-Artifact Integration</strong>: Combines events from messages, app usage, location data, browser history, and more into a single timeline.</li>
+                                <li><strong>Interactive Filtering</strong>: Allows filtering by time range, event type, or keyword.</li>
+                                <li><strong>Event Clustering</strong>: Automatically groups related events to identify patterns and sequences.</li>
+                                <li><strong>Zoom and Pan</strong>: Supports zooming in on specific time periods and panning through the timeline.</li>
+                                <li><strong>Event Details</strong>: Provides detailed information about each event when selected.</li>
+                                <li><strong>Export Options</strong>: Allows exporting the timeline as HTML, PDF, or image files.</li>
+                                <li><strong>Annotation</strong>: Supports adding investigator notes and annotations to events.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.visualization import TimelineGenerator
+from ileapp_ai import Analyzer, LLMClient
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client)
+
+# Analyze multiple artifacts
+message_results = analyzer.analyze_artifact("/path/to/sms.db", "messages")
+app_results = analyzer.analyze_artifact("/path/to/app_usage.db", "app_usage")
+browser_results = analyzer.analyze_artifact("/path/to/chrome_history.db", "browser_history")
+
+# Combine events from all artifacts
+all_events = message_results.events + app_results.events + browser_results.events
+
+# Generate timeline
+timeline_generator = TimelineGenerator()
+timeline = timeline_generator.generate_timeline(
+    events=all_events,
+    output_path="/path/to/output/timeline.html"
+)
+
+print(f"Timeline generated at: {timeline.path}")</code></pre>
+                        </div>
+
+                        <h2 id="report-generation">Automated Report Generation</h2>
+                        <p>iLEAPP AI includes advanced report generation capabilities that create comprehensive forensic reports from analysis results.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+                            <h3>AI-Enhanced Reports</h3>
+                            <p>The report generation system creates detailed, professional reports that include analysis results, visualizations, and AI-generated insights.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Template-Based Generation</strong>: Uses customizable templates to create consistent, professional reports.</li>
+                                <li><strong>Executive Summaries</strong>: Automatically generates concise summaries of key findings.</li>
+                                <li><strong>Visualization Integration</strong>: Embeds charts, graphs, and timelines directly in the report.</li>
+                                <li><strong>Natural Language Insights</strong>: Includes AI-generated narrative descriptions of patterns and findings.</li>
+                                <li><strong>Multiple Formats</strong>: Supports HTML, PDF, and JSON output formats.</li>
+                                <li><strong>Customizable Sections</strong>: Allows selecting which sections and artifacts to include in the report.</li>
+                                <li><strong>Chain of Custody</strong>: Includes chain of custody information and analysis metadata.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai import Analyzer, LLMClient
+from ileapp_ai.reporting import ReportGenerator
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client)
+
+# Analyze case with multiple artifacts
+case_results = analyzer.analyze_case(
+    case_path="/path/to/case_directory",
+    artifacts=["messages", "app_usage", "browser_history"],
+    analysis_depth="comprehensive"
+)
+
+# Generate report
+report_generator = ReportGenerator()
+report = report_generator.generate_report(
+    analysis_results=case_results,
+    output_format="pdf",
+    output_path="/path/to/output/report.pdf",
+    options={
+        "include_executive_summary": True,
+        "include_visualizations": True,
+        "include_raw_data": False,
+        "include_chain_of_custody": True
+    }
+)
+
+print(f"Report generated at: {report.path}")</code></pre>
+                        </div>
+
+                        <h2 id="appendices">Appendices Generation</h2>
+                        <p>iLEAPP AI can automatically generate comprehensive appendices that provide additional context and reference materials for forensic reports.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-book"></i></div>
+                            <h3>Comprehensive Appendices</h3>
+                            <p>The appendices generator creates detailed reference materials that supplement the main forensic report.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Statistical Summaries</strong>: Provides detailed statistics for each artifact type.</li>
+                                <li><strong>Entity Indexes</strong>: Creates indexes of people, places, organizations, and other entities mentioned in the data.</li>
+                                <li><strong>Timeline References</strong>: Includes detailed chronological listings of events.</li>
+                                <li><strong>Technical Details</strong>: Documents technical information about the extraction and analysis process.</li>
+                                <li><strong>Glossary</strong>: Automatically generates a glossary of technical terms used in the report.</li>
+                                <li><strong>Methodology Documentation</strong>: Describes the methodology used for extraction and analysis.</li>
+                                <li><strong>Cross-References</strong>: Creates cross-references between related items in different artifacts.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.reporting import AppendicesGenerator
+from ileapp_ai import Analyzer, LLMClient
+
+llm_client = LLMClient(provider="openrouter", api_key="your_api_key")
+analyzer = Analyzer(llm_client)
+
+# Analyze case
+case_results = analyzer.analyze_case(
+    case_path="/path/to/case_directory",
+    artifacts=["messages", "app_usage", "browser_history"]
+)
+
+# Generate appendices
+appendices_generator = AppendicesGenerator()
+appendices = appendices_generator.generate_appendices(
+    analysis_results=case_results,
+    output_path="/path/to/output/appendices.pdf",
+    options={
+        "include_statistics": True,
+        "include_entity_indexes": True,
+        "include_timeline_references": True,
+        "include_technical_details": True,
+        "include_glossary": True,
+        "include_methodology": True
+    }
+)
+
+print(f"Appendices generated at: {appendices.path}")</code></pre>
+                        </div>
+
+                        <h2 id="security-features">Security Features</h2>
+                        <p>iLEAPP AI includes advanced security features to maintain forensic integrity and protect sensitive data.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3>Forensic Security</h3>
+                            <p>The security features ensure the integrity and confidentiality of forensic data throughout the analysis process.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Chain of Custody Tracking</strong>: Maintains a detailed record of all actions performed on forensic data.</li>
+                                <li><strong>Audit Logging</strong>: Logs all analysis activities with timestamps and user information.</li>
+                                <li><strong>Data Encryption</strong>: Supports encryption of sensitive data at rest and in transit.</li>
+                                <li><strong>Hash Verification</strong>: Verifies file hashes to ensure data integrity.</li>
+                                <li><strong>Access Controls</strong>: Implements role-based access controls for multi-user environments.</li>
+                                <li><strong>Local LLM Support</strong>: Supports local LLM models for sensitive investigations where data cannot leave the local environment.</li>
+                                <li><strong>Data Minimization</strong>: Implements data minimization techniques when using external APIs.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.security import ChainOfCustody, enable_audit_logging, encrypt_data
+from ileapp_ai import Analyzer, LLMClient
+
+# Enable audit logging
+enable_audit_logging(log_path="/path/to/audit.log")
+
+# Initialize chain of custody
+chain_of_custody = ChainOfCustody(
+    case_id="CASE-2025-001",
+    investigator="John Doe"
+)
+
+# Initialize client with local model for sensitive data
+llm_client = LLMClient(
+    provider="local",
+    model="llama-3-70b"
+)
+
+# Initialize analyzer
+analyzer = Analyzer(llm_client)
+
+# Log the analysis action
+action_id = chain_of_custody.log_action(
+    action="Analyzing messages",
+    artifact="/path/to/sms.db"
+)
+
+# Encrypt sensitive data
+encrypted_path = encrypt_data(
+    file_path="/path/to/sms.db",
+    password="secure_password",
+    output_path="/path/to/encrypted_sms.db"
+)
+
+# Perform the analysis
+results = analyzer.analyze_artifact(
+    artifact_path=encrypted_path,
+    artifact_type="messages",
+    options={"encrypted": True, "password": "secure_password"}
+)
+
+# Log the completion of the analysis
+chain_of_custody.log_action(
+    action="Analysis completed",
+    artifact="/path/to/sms.db",
+    details={"action_id": action_id, "findings": len(results.findings)}
+)</code></pre>
+                        </div>
+
+                        <h2 id="user-dashboard">User Dashboard</h2>
+                        <p>iLEAPP AI includes a user dashboard for tracking analysis progress and managing forensic cases.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <h3>Interactive Dashboard</h3>
+                            <p>The user dashboard provides a centralized interface for managing forensic cases, tracking analysis progress, and accessing reports.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Case Management</strong>: Organizes forensic data and analysis results by case.</li>
+                                <li><strong>Progress Tracking</strong>: Shows real-time progress of ongoing analyses.</li>
+                                <li><strong>Result Filtering</strong>: Allows filtering and searching of analysis results.</li>
+                                <li><strong>Report Access</strong>: Provides easy access to generated reports and visualizations.</li>
+                                <li><strong>Notification System</strong>: Notifies users when analyses are complete or require attention.</li>
+                                <li><strong>User Management</strong>: Supports multiple users with different roles and permissions.</li>
+                                <li><strong>Activity History</strong>: Maintains a history of user activities and analyses.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code>from ileapp_ai.dashboard import Dashboard
+
+# Initialize the dashboard
+dashboard = Dashboard(port=8080)
+
+# Start the dashboard server
+dashboard.start()
+
+print(f"Dashboard running at: http://localhost:8080")
+
+# The dashboard can also be accessed programmatically
+dashboard.add_case(
+    case_id="CASE-2025-001",
+    case_name="John Doe Investigation",
+    description="Investigation of suspicious activity on John Doe's iPhone"
+)
+
+dashboard.add_analysis_task(
+    case_id="CASE-2025-001",
+    task_name="Message Analysis",
+    artifact_path="/path/to/sms.db",
+    artifact_type="messages",
+    analysis_depth="comprehensive"
+)
+
+# Check task status
+status = dashboard.get_task_status(
+    case_id="CASE-2025-001",
+    task_name="Message Analysis"
+)
+
+print(f"Task status: {status}")</code></pre>
+                        </div>
+
+                        <h2 id="integration-options">Integration Options</h2>
+                        <p>iLEAPP AI supports multiple integration options to fit different forensic workflows and requirements.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-plug"></i></div>
+                            <h3>Flexible Integration</h3>
+                            <p>The integration options allow iLEAPP AI to be used in various forensic workflows and environments.</p>
+                            
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Multiple LLM Providers</strong>: Supports OpenRouter, Anthropic, OpenAI, and local LLM models.</li>
+                                <li><strong>Plugin Architecture</strong>: Allows extending iLEAPP AI with custom analyzers and processors.</li>
+                                <li><strong>API Integration</strong>: Provides a comprehensive API for integration with other forensic tools.</li>
+                                <li><strong>Command-Line Interface</strong>: Supports automation and scripting through a powerful CLI.</li>
+                                <li><strong>Graphical User Interface</strong>: Provides an intuitive GUI for interactive analysis.</li>
+                                <li><strong>Web Interface</strong>: Offers a web-based interface for remote access and collaboration.</li>
+                                <li><strong>Standalone Mode</strong>: Can be used as a standalone tool or integrated with the standard iLEAPP tool.</li>
+                            </ul>
+                            
+                            <h4>Example Usage:</h4>
+                            <pre><code># Using different LLM providers
+from ileapp_ai import LLMClient, Analyzer
+
+# OpenRouter
+openrouter_client = LLMClient(
+    provider="openrouter",
+    api_key="your_openrouter_api_key",
+    model="anthropic/claude-3-opus-20240229"
+)
+
+# Anthropic
+anthropic_client = LLMClient(
+    provider="anthropic",
+    api_key="your_anthropic_api_key",
+    model="claude-3-opus-20240229"
+)
+
+# OpenAI
+openai_client = LLMClient(
+    provider="openai",
+    api_key="your_openai_api_key",
+    model="gpt-4"
+)
+
+# Local model
+local_client = LLMClient(
+    provider="local",
+    model="llama-3-70b"
+)
+
+# Create analyzers with different clients
+openrouter_analyzer = Analyzer(openrouter_client)
+anthropic_analyzer = Analyzer(anthropic_client)
+openai_analyzer = Analyzer(openai_client)
+local_analyzer = Analyzer(local_client)</code></pre>
+                        </div>
+
+                        <div class="note">
+                            <p><strong>Note:</strong> For detailed information on how to use these enhanced features, please refer to the <a href="api-reference.html">API Reference</a> and <a href="integration-guide.html">Integration Guide</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>iLEAPP<span>AI</span></h2>
+                    <p>Enhanced iOS Forensics with Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Product</h3>
+                        <ul>
+                            <li><a href="../index.html#features">Features</a></li>
+                            <li><a href="../index.html#how-it-works">How It Works</a></li>
+                            <li><a href="../index.html#demo">Demo</a></li>
+                            <li><a href="../downloads/">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api-reference.html">API Reference</a></li>
+                            <li><a href="integration-guide.html">Integration Guide</a></li>
+                            <li><a href="enhanced-features.html">Enhanced Features</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="../index.html#resources">Research & Trends</a></li>
+                            <li><a href="../index.html#resources">External Resources</a></li>
+                            <li><a href="../index.html#resources">Case Studies</a></li>
+                            <li><a href="../index.html#resources">Tools & Techniques</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 iLEAPP AI. All rights reserved.</p>
+                <p>Based on <a href="https://github.com/abrignoni/iLEAPP" target="_blank">iLEAPP</a> by Alexis Brignoni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>
