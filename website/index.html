@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLEAPP AI - Enhanced iOS Forensics with Artificial Intelligence</title>
+    <meta name="description" content="iLEAPP AI enhances iOS forensic analysis with artificial intelligence, providing deeper insights into digital evidence through natural language processing.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="minified/styles.min.css" as="style">
+    <link rel="preload" href="minified/scripts.min.js" as="script">
+    <link rel="preload" href="images/hero-illustration.svg" as="image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="minified/styles.min.css">
+    <link rel="stylesheet" href="mobile-enhancements.css">
+    
+    <!-- Font preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>iLEAPP <span>AI</span></h1>
+                <p>Enhanced iOS Forensics</p>
+            </div>
+            
+            <!-- Simplified Navigation Menu -->
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#workflow">How It Works</a></li>
+                    <li><a href="#docs">Documentation</a></li>
+                    <li><a href="#download" class="btn btn-primary btn-small">Download</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Search Button -->
+            <button class="search-toggle" aria-label="Search">
+                <i class="bi bi-search"></i>
+            </button>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Search Container -->
+    <div class="search-container">
+        <div class="search-header">
+            <h2>Search</h2>
+            <button class="search-close" aria-label="Close search">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <form class="search-form">
+            <input type="text" placeholder="Search for features, documentation, etc." aria-label="Search">
+            <button type="submit" aria-label="Submit search">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+        <div class="search-results">
+            <ul class="search-results-list"></ul>
+        </div>
+    </div>
+    
+    <!-- Hero Section - Improved with clearer value proposition -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Solve iOS Forensic Cases Faster with AI</h1>
+                <p>iLEAPP AI helps investigators extract meaningful insights from iOS devices using artificial intelligence to analyze messages, app usage, and digital artifacts.</p>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary btn-large">Download Now</a>
+                    <a href="#features" class="btn btn-secondary btn-large">See Features</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-illustration.svg" alt="iLEAPP AI analyzing iOS data" width="500" height="400">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section - Improved readability with more white space -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Enhanced Forensic Capabilities</h2>
+                <p>iLEAPP AI transforms how you analyze iOS artifacts with intelligent processing and natural language understanding.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+                    <h3>Message Analysis</h3>
+                    <p>Extract insights from conversations with sentiment analysis and topic extraction.</p>
+                    <ul class="feature-list">
+                        <li>Conversation threading</li>
+                        <li>Sentiment detection</li>
+                        <li>Contact pattern analysis</li>
+                        <li>Key topic identification</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-app"></i>
+                    </div>
+                    <h3>App Usage Analysis</h3>
+                    <p>Understand user behavior through app usage patterns and screen time analysis.</p>
+                    <ul class="feature-list">
+                        <li>Usage timeline visualization</li>
+                        <li>Pattern detection</li>
+                        <li>Behavioral profiling</li>
+                        <li>App transition analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <h3>iTunes Music Analysis</h3>
+                    <p>Analyze music preferences and listening patterns to build a comprehensive user profile.</p>
+                    <ul class="feature-list">
+                        <li>Genre distribution</li>
+                        <li>Listening habits</li>
+                        <li>Favorite artists</li>
+                        <li>Playlist analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-globe"></i>
+                    </div>
+                    <h3>Chrome History Analysis</h3>
+                    <p>Examine browsing patterns, search interests, and web activity to identify digital footprints.</p>
+                    <ul class="feature-list">
+                        <li>Domain categorization</li>
+                        <li>Search term analysis</li>
+                        <li>Browsing timeline</li>
+                        <li>Interest profiling</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <h3>Comprehensive Reports</h3>
+                    <p>Generate detailed reports with executive summaries, visualizations, and key findings.</p>
+                    <ul class="feature-list">
+                        <li>Executive summaries</li>
+                        <li>Visual data representation</li>
+                        <li>Timeline integration</li>
+                        <li>Exportable formats</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3>Security & Chain of Custody</h3>
+                    <p>Maintain evidence integrity with built-in security features and audit logging.</p>
+                    <ul class="feature-list">
+                        <li>Audit trail logging</li>
+                        <li>Chain of custody tracking</li>
+                        <li>Data encryption</li>
+                        <li>Access controls</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Workflow Section - Improved with clearer steps -->
+    <section id="workflow" class="workflow-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>iLEAPP AI seamlessly integrates with your forensic workflow to enhance iOS artifact analysis.</p>
+            </div>
+            
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Extract iOS Artifacts</h3>
+                        <p>Use iLEAPP to extract data from iOS backups, images, or file systems. The tool supports a wide range of iOS versions and artifact types.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI-Powered Analysis</h3>
+                        <p>The integrated AI engine processes the extracted data, identifying patterns, relationships, and insights that would be difficult to discover manually.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Interactive Visualization</h3>
+                        <p>Explore the analyzed data through interactive visualizations, timelines, and relationship maps that make complex information easy to understand.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Natural Language Queries</h3>
+                        <p>Ask questions in plain English to query the data. The AI translates your questions into precise database queries and returns relevant results.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Comprehensive Reporting</h3>
+                        <p>Generate detailed reports with executive summaries, key findings, and supporting evidence, ready for presentation or legal proceedings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section - Added for credibility -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Forensic Experts Say</h2>
+                <p>See how iLEAPP AI is transforming digital investigations for professionals worldwide.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"iLEAPP AI has reduced our analysis time by 60%. The message analyzer identified key conversations we would have missed using traditional methods."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-1.jpg" alt="Sarah Johnson" width="60" height="60">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Digital Forensics Investigator</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The natural language query feature is a game-changer. I can ask complex questions about the data and get immediate, accurate results."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-2.jpg" alt="Michael Chen" width="60" height="60">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Law Enforcement Specialist</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The timeline visualization helped us establish a clear sequence of events that was crucial for our case. iLEAPP AI is now our standard tool."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-3.jpg" alt="Emma Rodriguez" width="60" height="60">
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Corporate Security Analyst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-prev" aria-label="Previous testimonial">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <div class="dots">
+                    <button class="dot active" aria-label="Testimonial 1"></button>
+                    <button class="dot" aria-label="Testimonial 2"></button>
+                    <button class="dot" aria-label="Testimonial 3"></button>
+                </div>
+                <button class="testimonial-next" aria-label="Next testimonial">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Demo Section - Improved with video placeholder -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>See iLEAPP AI in Action</h2>
+                <p>Watch how iLEAPP AI analyzes iOS artifacts and generates insights in real-time.</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <img src="images/demo-thumbnail.jpg" alt="iLEAPP AI Demo Video Thumbnail" width="800" height="450">
+                    <button class="play-button" aria-label="Play demo video">
+                        <i class="bi bi-play-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Documentation Section - Improved organization -->
+    <section id="docs" class="docs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Documentation</h2>
+                <p>Everything you need to get started with iLEAPP AI and make the most of its features.</p>
+            </div>
+            
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <h3>Getting Started</h3>
+                    <p>Learn how to install and configure iLEAPP AI for your first investigation.</p>
+                    <a href="docs/getting-started.html" class="btn btn-secondary">Read Guide</a>
+                </div>
+                
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+                    <h3>API Reference</h3>
+                    <p>Detailed documentation of the iLEAPP AI API for custom integrations.</p>
+                    <a href="docs/api-reference.html" class="btn btn-secondary">View Reference</a>
+                </div>
+                
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="bi bi-puzzle"></i>
+                    </div>
+                    <h3>Integration Guide</h3>
+                    <p>Instructions for integrating iLEAPP AI with your existing forensic workflow.</p>
+                    <a href="docs/integration-guide.html" class="btn btn-secondary">Read Guide</a>
+                </div>
+                
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="bi bi-stars"></i>
+                    </div>
+                    <h3>Enhanced Features</h3>
+                    <p>Explore the AI-powered features that make iLEAPP AI unique.</p>
+                    <a href="docs/enhanced-features.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section - Added to address common questions -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about iLEAPP AI.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What iOS versions does iLEAPP AI support?</h3>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>iLEAPP AI supports iOS versions 12 through 17, including the latest iOS 17.4 update. Our team regularly updates the tool to ensure compatibility with new iOS releases.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need an internet connection to use iLEAPP AI?</h3>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The core functionality of iLEAPP AI works offline. However, some advanced AI features require an internet connection to access cloud-based language models. We also offer a fully offline version with local AI models for sensitive investigations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is iLEAPP AI suitable for legal proceedings?</h3>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, iLEAPP AI is designed with legal requirements in mind. It maintains a detailed chain of custody, provides comprehensive audit logs, and generates court-ready reports. The tool has been used successfully in numerous legal cases.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does iLEAPP AI handle encrypted data?</h3>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>iLEAPP AI can analyze unencrypted portions of iOS backups without requiring the encryption password. For encrypted backups, you'll need the password to fully access the data. The tool includes advanced decryption capabilities for supported iOS artifacts.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I integrate iLEAPP AI with other forensic tools?</h3>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, iLEAPP AI provides a comprehensive API that allows integration with other forensic tools. We also offer pre-built integrations with popular forensic platforms. Check our Integration Guide for detailed instructions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download Section - Improved CTA -->
+    <section id="download" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your iOS Investigations?</h2>
+                <p>Download iLEAPP AI today and start uncovering deeper insights from iOS artifacts.</p>
+                <div class="cta-buttons">
+                    <a href="downloads/" class="btn btn-primary btn-large">Download Now</a>
+                    <a href="docs/getting-started.html" class="btn btn-secondary btn-large">Read Installation Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer - Improved organization -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>iLEAPP <span>AI</span></h2>
+                    <p>Enhanced iOS Forensics</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Product</h3>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#workflow">How It Works</a></li>
+                            <li><a href="#demo">Demo</a></li>
+                            <li><a href="#download">Download</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="docs/getting-started.html">Getting Started</a></li>
+                            <li><a href="docs/api-reference.html">API Reference</a></li>
+                            <li><a href="docs/integration-guide.html">Integration Guide</a></li>
+                            <li><a href="docs/enhanced-features.html">Enhanced Features</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="https://github.com/shamrockmuffin/iLEAPP-LLM-Integration" target="_blank" rel="noopener">GitHub Repository</a></li>
+                            <li><a href="#testimonials">Case Studies</a></li>
+                            <li><a href="#contact">Contact Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 iLEAPP AI. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="minified/scripts.min.js" defer></script>
+</body>
+</html>

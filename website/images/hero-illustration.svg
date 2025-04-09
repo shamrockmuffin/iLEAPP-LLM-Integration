@@ -1,0 +1,44 @@
+/* SVG placeholder for hero illustration */
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #f5f7ff; }
+    .phone { fill: #1a1a2e; stroke: #4a6bff; stroke-width: 2; }
+    .screen { fill: #ffffff; }
+    .data { fill: #4a6bff; }
+    .highlight { fill: #34c759; }
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="500" height="400" rx="20" />
+  
+  <!-- Phone outline -->
+  <rect class="phone" x="150" y="50" width="200" height="300" rx="20" />
+  <rect class="screen" x="160" y="70" width="180" height="260" rx="10" />
+  
+  <!-- Data visualization elements -->
+  <rect class="data" x="180" y="100" width="140" height="10" rx="5" />
+  <rect class="data" x="180" y="120" width="100" height="10" rx="5" />
+  <rect class="data" x="180" y="140" width="120" height="10" rx="5" />
+  
+  <!-- AI analysis visualization -->
+  <circle class="data pulse" cx="200" cy="200" r="40" opacity="0.7" />
+  <circle class="highlight pulse" cx="300" cy="220" r="30" opacity="0.7" />
+  
+  <!-- Connection lines -->
+  <line x1="200" y1="200" x2="300" y2="220" stroke="#4a6bff" stroke-width="3" stroke-dasharray="5,5" />
+  
+  <!-- Data points -->
+  <circle class="data" cx="180" cy="250" r="5" />
+  <circle class="data" cx="210" cy="260" r="5" />
+  <circle class="data" cx="240" cy="240" r="5" />
+  <circle class="data" cx="270" cy="270" r="5" />
+  <circle class="data" cx="300" cy="250" r="5" />
+  
+  <!-- AI brain symbol -->
+  <ellipse cx="250" cy="310" rx="30" ry="15" fill="#4a6bff" opacity="0.5" />
+  <path d="M230,310 Q250,290 270,310 Q250,330 230,310" stroke="#4a6bff" stroke-width="2" fill="none" />
+</svg>

@@ -1,0 +1,489 @@
+/* Mobile-specific enhancements for improved website */
+@media (max-width: 992px) {
+  /* Tablet and smaller */
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    height: 100%;
+  }
+  
+  .workflow-step {
+    align-items: flex-start;
+  }
+  
+  .testimonial-slider {
+    padding: 0 var(--space-md);
+  }
+  
+  .cta-content {
+    padding: 0 var(--space-md);
+  }
+  
+  /* Improved navigation for tablets */
+  .search-toggle {
+    margin-left: var(--space-sm);
+  }
+  
+  .main-nav {
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile landscape and smaller */
+  html {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .hero {
+    padding: var(--space-xl) 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.25rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .section-header p {
+    font-size: 1.125rem;
+  }
+  
+  .feature-card, .doc-card {
+    padding: var(--space-lg);
+  }
+  
+  .workflow-step:not(:last-child)::after {
+    height: calc(100% + var(--space-lg));
+  }
+  
+  .testimonial {
+    padding: var(--space-lg);
+  }
+  
+  .testimonial-content p {
+    font-size: 1rem;
+  }
+  
+  .faq-question {
+    padding: var(--space-md);
+  }
+  
+  .faq-question h3 {
+    font-size: 1.125rem;
+  }
+  
+  .faq-answer {
+    padding: 0 var(--space-md) var(--space-md);
+  }
+  
+  .search-container {
+    width: 100%;
+    padding: var(--space-lg);
+  }
+  
+  /* Improved mobile navigation */
+  nav .main-nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    padding: var(--space-lg);
+    box-shadow: var(--shadow);
+    z-index: var(--z-dropdown);
+    display: none;
+  }
+  
+  nav .main-nav.active {
+    display: flex;
+  }
+  
+  nav .main-nav li {
+    width: 100%;
+  }
+  
+  nav .main-nav li a {
+    width: 100%;
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  /* Improved CTA for mobile */
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Mobile portrait */
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+  
+  .feature-card, .doc-card {
+    padding: var(--space-md);
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .workflow-step {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .testimonial {
+    padding: var(--space-md);
+  }
+  
+  .testimonial-author img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .footer-content {
+    gap: var(--space-lg);
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .footer-column {
+    width: 100%;
+  }
+  
+  .search-toggle, .back-to-top {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .search-form {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .search-form input {
+    border-radius: var(--border-radius);
+  }
+  
+  .search-form button {
+    border-radius: var(--border-radius);
+  }
+  
+  /* Touch-friendly improvements */
+  .btn, 
+  nav .main-nav li a,
+  .faq-question,
+  .resource-list li a,
+  .footer-column ul li a,
+  .search-toggle,
+  .back-to-top {
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--space-md);
+  }
+  
+  /* Increase tap target spacing */
+  .footer-column ul li,
+  .resource-list li,
+  .feature-list li {
+    margin-bottom: var(--space-md);
+  }
+  
+  /* Improve form elements for touch */
+  input, 
+  button, 
+  select, 
+  textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Specific touch improvements for all screen sizes */
+@media (pointer: coarse) {
+  /* For touch devices */
+  .btn,
+  nav .main-nav li a,
+  .faq-question,
+  .testimonial-prev,
+  .testimonial-next,
+  .dot,
+  .search-toggle,
+  .back-to-top,
+  .search-close,
+  .mobile-menu-toggle {
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  
+  /* Increase spacing between clickable elements */
+  nav .main-nav {
+    gap: var(--space-md);
+  }
+  
+  /* Make form elements more touch-friendly */
+  input[type="checkbox"],
+  input[type="radio"] {
+    transform: scale(1.2);
+  }
+  
+  /* Improve scrolling */
+  .search-results {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  :root {
+    --primary-color: #0000ff;
+    --primary-dark: #0000cc;
+    --primary-light: #3333ff;
+    --secondary-color: #008800;
+    --secondary-dark: #006600;
+    --secondary-light: #00aa00;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --gray-color: #666666;
+    --gray-light: #dddddd;
+    --gray-dark: #333333;
+  }
+  
+  body {
+    color: #000000;
+    background-color: #ffffff;
+  }
+  
+  a, .btn, .feature-icon, .doc-icon {
+    text-decoration: underline;
+  }
+  
+  .btn-primary, .cta {
+    background-color: #0000ff;
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .btn-secondary {
+    background-color: #ffffff;
+    color: #0000ff;
+    border: 2px solid #0000ff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .video-placeholder:hover .play-button {
+    transform: translate(-50%, -50%);
+  }
+  
+  .feature-card:hover,
+  .doc-card:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+  
+  .search-toggle:hover,
+  .back-to-top:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #7a8eff;
+    --primary-dark: #4a6bff;
+    --primary-light: #a0acff;
+    --secondary-color: #5edc7e;
+    --secondary-dark: #34c759;
+    --secondary-light: #8eeaa3;
+    --dark-color: #f5f7ff;
+    --light-color: #1a1a2e;
+    --gray-color: #b0b0c0;
+    --gray-light: #2a2a3e;
+    --gray-dark: #d0d0e0;
+  }
+  
+  body {
+    color: var(--dark-color);
+    background-color: #121220;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-color);
+  }
+  
+  header {
+    background-color: #121220;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+  }
+  
+  .feature-card, .doc-card, .testimonial, .faq-item {
+    background-color: #1a1a2e;
+    box-shadow: var(--shadow);
+  }
+  
+  .hero {
+    background-color: var(--light-color);
+    background-image: linear-gradient(135deg, var(--light-color) 0%, #121220 100%);
+  }
+  
+  section:nth-child(even) {
+    background-color: #151525;
+  }
+  
+  .search-container {
+    background-color: #1a1a2e;
+  }
+  
+  .search-header {
+    border-bottom: 1px solid var(--gray-light);
+  }
+  
+  .search-form {
+    border-bottom: 1px solid var(--gray-light);
+  }
+  
+  .search-form input {
+    background-color: #121220;
+    color: var(--dark-color);
+    border: 1px solid var(--gray-light);
+  }
+  
+  .search-results-list a:hover {
+    background-color: #2a2a3e;
+  }
+  
+  .faq-question:hover {
+    background-color: #2a2a3e;
+  }
+  
+  .resource-list li a:hover {
+    background-color: #2a2a3e;
+  }
+  
+  /* Invert the logo and other images if needed */
+  .logo img, .feature-icon img {
+    filter: invert(1);
+  }
+  
+  /* Improved dark mode navigation */
+  nav .main-nav li a {
+    color: var(--dark-color);
+  }
+  
+  nav .main-nav li a:hover, nav .main-nav li a:focus {
+    background-color: #2a2a3e;
+  }
+  
+  nav .main-nav.active {
+    background-color: #1a1a2e;
+  }
+}
